@@ -1,6 +1,7 @@
 body {
   background-color:rgb(236, 236, 236);
   letter-spacing: 0.05em;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
 }
 .midashi {
     font-size: 16px;
@@ -15,4 +16,37 @@ body {
 }
 .main {
   flex: 1;
+}
+
+.article {
+  font-size: 14px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 0 13px rgb(82, 82, 82);
+  letter-spacing: 0.1em;
+  line-height:30px;
+  width: 85%;
+  margin-left: 2%;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 3%;
+  margin-bottom: 20px;
+  margin-top: 2%;
+  max-width: 1150px;
+  padding-right: 20px;
+}
+
+.skill {
+  padding: 2px;
+  padding-left: 10px;
+  letter-spacing: 0.1em
+}
+
+.midashi2 {
+  padding: 15px 15px 15px 20px;
+}
+
+.honbun {
+  padding: 2px;
+  letter-spacing: 0.1em
 }
