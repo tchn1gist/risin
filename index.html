@@ -15,15 +15,57 @@
         <link type="text/css" rel="stylesheet" charset="UTF-8" href="./style.css">
         <link rel="shortcut icon" href="./img/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="./img/ati_icon.png">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+        <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css" type="text/css" media="all" />
         <!-- JavaScript Bundle with Popper -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="./script.js"></script>
+        <script src="./js/script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3"></script>
+        <script src="js/jquery.shuffle.min.js"></script>
+        <script>
+            $(function() {
+                $('#btn li').on('click', function() {
+                    var $this = $(this),
+                        $grid = $('#animationList');
+        
+                    $('#btn .active').removeClass('active');
+                    $this.addClass('active');
+                    $grid.shuffle($this.data('group'));
+                });
+        
+                $('#animationList').shuffle({
+                    group: 'all',
+                    speed: 700,
+                    easing: 'ease-in-out'
+                });
+            });
+            window.addEventListener("scroll", function () {
+                const elm = document.querySelector(".elm");
+                const scroll = window.pageYOffset;
+                if (scroll > 100) {
+                    elm.style.opacity = "1";
+                    // console.log(scroll);
+                } else {
+                    elm.style.opacity = "0";
+                    // console.log(scroll);
+                }
+                });
+        </script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-44808916-1', 'n--log.net');
+          ga('send', 'pageview');
+        
+        </script>
     </head>
     <body>
+        <img src="./img/risin_logo.png" class="d-block mx-auto elm" width="126" height="36" vspace="15" style="right: 10px; top: 5px; position: fixed; z-index:999"> 
         <div>
             <a href="https://risin.jp">
                 <img src="./img/risin_logo.png" class="d-block mx-auto" width="210" height="60" vspace="15">
@@ -35,7 +77,8 @@
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 2px 2px 4px -2px gray; margin-bottom: 20px; position: -webkit-sticky; position: sticky; top: 0; z-index: 2; ">
             <div class="container-fluid">
-                <button class="navbar-toggler mr-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
@@ -45,22 +88,17 @@
                         <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Portfolio</a></font>
                         <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Other Projects</a></font>
                         <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Contact me</a></font>
-                        
-                    </div>
-                    <div><img class="imgs" style="display: inline-block; z-index: 2; right: 0px; width: 120px; height: 40px; padding-top:1px;" src="./img/risin_logo.png" href="#"></div>
-                    
-                </div>
-                
+                    </div>     
+                </div>                
             </div>
         </nav>
 
-        <div class="wrapper" style="display: flex; flex-wrap: wrap;">
+        <div class="wrapper" style="flex-wrap: wrap;">
             <div class="accordion main" id="accordionExample" style="padding-left: 1%; width:calc(100%-250px); border-top-left-radius: 20px; border-top-right-radius: 20px; padding-bottom: 20px;">
                 <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
                     <img src="./img/aboutme.jpg" alt="私の自己紹介" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                     <div class="card-body">
                       <h5 class="card-title"><center>私の自己紹介</center></h5>
-
                     </div>
                 </div>
             </div>
@@ -69,7 +107,6 @@
                     <img src="./img/portfolio.jpg" alt="過去の実績" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                     <div class="card-body">
                       <h5 class="card-title"><center>過去の実績</center></h5>
-
                     </div>
                 </div>
             </div>
@@ -78,7 +115,6 @@
                     <img src="./img/otherprojects.jpg" alt="他の活動" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                     <div class="card-body">
                       <h5 class="card-title"><center>他の活動</center></h5>
-
                     </div>
                 </div>
             </div>
@@ -87,30 +123,237 @@
                     <img src="./img/contactme.jpg" alt="お問い合わせはこちら" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                     <div class="card-body">
                       <h5 class="card-title"><center>お問合せはこちら</center></h5>
-
                     </div>
                 </div>
             </div>
 
 
         </div>
+        <div class="wrapper" style="flex-wrap: wrap;">
+            <div class="main">
+                <div class="article">
+                    <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>自己紹介</b></h2>
+                    <p class="honbun">
+                        主に東京都内で活躍しているフリーランスWebエンジニアです。大規模SNS開発から個人ブログ構築まで, これまでの経験を生かしてサポート致します。
+                        <br>
+                        サーバーサイドのアプリケーション構築を主にしていますが, JavaScriptやHTML5などのフロントエンド開発も経験があります。
+                    </p>
+                    <p class="honbun">
+                        これまでの実績はPortfolioをご参照ください。
+                    </p>
+                    <h3 style="padding-left: 2px; padding-bottom: 2px;">スキル</h3>
+                    <p>
+                        <div class="skill"><b>言語</b></div>
+                        <div class="honbun" style="padding-left: 20px;">Ruby, PHP, JavaScript, HTML, CSS</div>
+                        <div class="skill"><b>フレームワーク / ライブラリ</b></div>
+                        <div class="honbun" style="padding-left: 20px;">Ruby on Rails, CakePHP, jQuery</div>
+                        <div class="skill"><b>ミドルウェア</b></div>
+                        <div class="honbun" style="padding-left: 20px;">Apache, NGINX, MySQL, KVS</div>
+                    </p>
+                    <h3 style="padding-left: 2px; padding-bottom: 2px;">リンク</h3>
+                    <span class="fa-stack fa-2x icons iconshadow">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-linkedin-in fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                    </span>
+                    <span class="fa-stack fa-2x icons iconshadow">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-twitter fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                    </span>
+                    <span class="fa-stack fa-2x icons iconshadow">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-facebook-f fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                    </span>
+                    <span class="fa-stack fa-2x icons iconshadow">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-brands fa-github fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                    </span>
 
-        <div class="article">
-            <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>自己紹介</b></h2>
-            <p class="honbun">
-                主に東京都内で活躍しているフリーランスWebエンジニアです。大規模SNS開発から個人ブログ構築まで, これまでの経験を生かしてサポート致します。
-                <br>
-                サーバーサイドのアプリケーション構築を主にしていますが, JavaScriptやHTML5などのフロントエンド開発も経験があります。
-            </p>
-            <p class="honbun">
-                これまでの実績はPortfolioをご参照ください。
-            </p>
-            <h3 style="padding-left: 2px; padding-bottom: 2px;">スキル</h3>
-            <p class="skill">
-                <b>言語</b>
-            </p>
-            <p class="honbun" style=""
+            
 
+                </div>
+                <div class="article">
+                    <div id="wrapper_shuffle">
+                        <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>過去の実績</b></h2>
+                        <ul id="btn">
+                            <li data-group="all" class="active alpha">ALL</li>
+                            <li data-group="red" class="alpha">WordPress</li>
+                            <li data-group="blue" class="alpha">AWS</li>
+                            <li data-group="green" class="alpha">Ruby on Rails</li>
+                            <li data-group="yellow" class="alpha">Nifty Cloud</li>
+                            <li></li>
+                        </ul>
+                        <ul id="animationList">
+                            <li data-groups='["red"]'>
+                                <div class="card">
+                                    <img src="" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["yellow"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["blue"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["green"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["green"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["yellow"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["blue"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["red"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["red"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["blue"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["yellow"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-groups='["green"]'>
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="article">
+                    <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>他の活動</b></h2>
+                    <div class="card mb-3" style="max-width: 500px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="..." alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="..." alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="article" style="padding-right: 10px;">
+                    <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>お問い合わせ</b></h2>
+                    <p class="honbun">
+                        下記のフォームより必要情報を記入してください。<br>3営業日以内にご連絡いたします。
+                    </p>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXqoTE4TDY12Sqo8RpKZN21JplUOefzUokyeCo--6k3kx8uQ/viewform?embedded=true" width="100%" height="1114" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                </div>
+
+            </div>
+            <div class="side">
+                
+
+                <a class="twitter-timeline" data-height="3000" href="https://twitter.com/mrsy?ref_src=twsrc%5Etfw">Tweets by mrsy</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmrisin%2F&tabs=timeline&width=0&height=0&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
         </div>
 
 
