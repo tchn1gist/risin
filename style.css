@@ -51,6 +51,7 @@ body {
   margin-top: 2%;
   max-width: 1150px;
   min-width: 350px;
+  padding-right: 20px;
 
 }
 
@@ -148,17 +149,17 @@ body {
 }
 
 #animationList li {
-	width: 240px;
+	width: 260px;
 	height: 320px;
-	padding: 10px;
+	padding: 20px;
 	float: left;
 	color: #fff;
 }
 
 #animationList li span {
 	display: block;
-	width: 180px;
-	height: 300px;
+	width: 200px;
+	height: 320px;
 	padding: 20px;
 }
 
@@ -234,10 +235,4 @@ li {
   clear: both;
 }
 
-@media screen and (max-width: 767px) {
-  .card{
-    width: 80%;
-    display:block;
-  }
-}
 
