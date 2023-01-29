@@ -52,6 +52,24 @@
                     // console.log(scroll);
                 }
                 });
+
+                jQuery(document).ready(function() {
+                    var offset = 100;
+                    var duration = 200;
+                    jQuery(window).scroll(function() {
+                        if (jQuery(this).scrollTop() > offset) {
+                            jQuery('.pagetop').fadeIn(duration);
+                        } else {
+                            jQuery('.pagetop').fadeOut(duration);
+                        }
+                    });
+
+                    jQuery('.pagetop').click(function(event) {
+                        event.preventDefault();
+                        jQuery('html, body').animate({scrollTop: 0}, duration);
+                        return false;
+                    })
+                });
         </script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -65,10 +83,11 @@
         </script>
     </head>
     <body>
+        <div id="home"></div>
         <img src="./img/risin_logo.png" class="d-block mx-auto elm" width="126" height="36" vspace="15" style="right: 10px; top: 5px; position: fixed; z-index:999"> 
         <div>
             <a href="https://risin.jp">
-                <img src="./img/risin_logo.png" class="d-block mx-auto" width="210" height="60" vspace="15">
+                <img src="./img/risin_logo.png" class="d-block mx-auto" width="210" height="60" vspace="15" href="#home">
             </a>
             <p class="lead text-center midashi">
                 <b>Freelance Web Engineer</b>
@@ -83,11 +102,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Home</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">About Me</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Portfolio</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Other Projects</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#" style="padding-left:10px; padding-right:10px;">Contact me</a></font>
+                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#home" style="padding-left:10px; padding-right:10px;">Home</a></font>
+                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#introduce" style="padding-left:10px; padding-right:10px;">About Me</a></font>
+                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#portfolio" style="padding-left:10px; padding-right:10px;">Portfolio</a></font>
+                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#otherprojects" style="padding-left:10px; padding-right:10px;">Other Projects</a></font>
+                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#contactus" style="padding-left:10px; padding-right:10px;">Contact me</a></font>
                     </div>     
                 </div>                
             </div>
@@ -95,42 +114,50 @@
 
         <div class="wrapper" style="flex-wrap: wrap;">
             <div class="accordion main" id="accordionExample" style="padding-left: 1%; width:calc(100%-250px); border-top-left-radius: 20px; border-top-right-radius: 20px; padding-bottom: 20px;">
-                <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
-                    <img src="./img/aboutme.jpg" alt="私の自己紹介" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
-                    <div class="card-body">
-                      <h5 class="card-title"><center>私の自己紹介</center></h5>
+                <a href="#introduce" style="color:inherit; text-decoration: none;">
+                    <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
+                        <img src="./img/aboutme.jpg" alt="私の自己紹介" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                        <div class="card-body">
+                        <h5 class="card-title"><center>私の自己紹介</center></h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="accordion main" id="accordionExample" style="padding-left: 1%; width:calc(100%-250px); border-top-left-radius: 20px; border-top-right-radius: 20px; padding-bottom: 20px;">
-                <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
-                    <img src="./img/portfolio.jpg" alt="過去の実績" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
-                    <div class="card-body">
-                      <h5 class="card-title"><center>過去の実績</center></h5>
+                <a href="#portfolio" style="color:inherit; text-decoration: none;">
+                    <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
+                        <img src="./img/portfolio.jpg" alt="過去の実績" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                        <div class="card-body">
+                        <h5 class="card-title"><center>過去の実績</center></h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="accordion main" id="accordionExample" style="padding-left: 1%; width:calc(100%-250px); border-top-left-radius: 20px; border-top-right-radius: 20px; padding-bottom: 20px;">
-                <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
-                    <img src="./img/otherprojects.jpg" alt="他の活動" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
-                    <div class="card-body">
-                      <h5 class="card-title"><center>他の活動</center></h5>
+                <a href="#otherprojects" style="color:inherit; text-decoration: none;">
+                    <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
+                        <img src="./img/otherprojects.jpg" alt="他の活動" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                        <div class="card-body">
+                        <h5 class="card-title"><center>他の活動</center></h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="accordion main" id="accordionExample" style="padding-left: 1%; width:calc(100%-250px); border-top-left-radius: 20px; border-top-right-radius: 20px; padding-bottom: 20px;">
-                <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
-                    <img src="./img/contactme.jpg" alt="お問い合わせはこちら" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
-                    <div class="card-body">
-                      <h5 class="card-title"><center>お問合せはこちら</center></h5>
+                <a href="#contactme" style="color:inherit; text-decoration: none;">
+                    <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
+                        <img src="./img/contactme.jpg" alt="お問い合わせはこちら" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                        <div class="card-body">
+                        <h5 class="card-title"><center>お問合せはこちら</center></h5>
+                        </div>
                     </div>
-                </div>
+                </a>    
             </div>
 
 
         </div>
         <div class="wrapper" style="flex-wrap: wrap;">
-            <div class="main">
+            <div class="main" id="introduce">
                 <div class="article">
                     <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>自己紹介</b></h2>
                     <p class="honbun">
@@ -151,285 +178,295 @@
                         <div class="honbun" style="padding-left: 20px;">Apache, NGINX, MySQL, KVS</div>
                     </p>
                     <h3 style="padding-left: 2px; padding-bottom: 2px;">リンク</h3>
-                    <span class="fa-stack fa-2x icons iconshadow">
-                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                        <i class="fa-brands fa-linkedin-in fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
-                    </span>
-                    <span class="fa-stack fa-2x icons iconshadow">
-                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                        <i class="fa-brands fa-twitter fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
-                    </span>
-                    <span class="fa-stack fa-2x icons iconshadow">
-                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                        <i class="fa-brands fa-facebook-f fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
-                    </span>
-                    <span class="fa-stack fa-2x icons iconshadow">
-                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                        <i class="fa-brands fa-github fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
-                    </span>
+                    <a href="https://www.linkedin.com/in/marsy/" style="color:inherit; text-decoration: none;">
+                        <span class="fa-stack fa-2x icons iconshadow">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-linkedin-in fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                        </span>
+                    </a>
+                    <a href="https://twitter.com/mrsy" style="color:inherit; text-decoration: none;">
+                        <span class="fa-stack fa-2x icons iconshadow">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-twitter fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                        </span>
+                    </a>
+                    <a href="https://www.facebook.com/mrisin" style="color:inherit; text-decoration: none;">
+                        <span class="fa-stack fa-2x icons iconshadow">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-facebook-f fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                        </span>
+                    </a>
+                    <a href="https://github.com/mrsy" style="color:inherit; text-decoration: none;">
+                        <span class="fa-stack fa-2x icons iconshadow">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-github fa-stack-1x faa-tada animated-hover faa-fast" style="color:white;"></i>
+                        </span>
+                    </a>
 
             
 
                 </div>
-                <div class="article">
+                <div class="article" id="portfolio">
                     <div id="wrapper_shuffle">
                         <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>過去の実績</b></h2>
                         <ul id="btn">
                             <li data-group="all" class="active alpha">ALL</li>
-                            <li data-group="red" class="alpha">WordPress</li>
-                            <li data-group="blue" class="alpha">AWS</li>
-                            <li data-group="green" class="alpha">Ruby on Rails</li>
-                            <li data-group="yellow" class="alpha">Nifty Cloud</li>
+                            <li data-group="Wordpress" class="alpha">WordPress</li>
+                            <li data-group="PHP" class="alpha">PHP</li>                            
+                            <li data-group="Ruby on Rails" class="alpha">Ruby on Rails</li>
+                            <li data-group="Logo-design" class="alpha">Logo-design</li>
+                            <li data-group="Web-design" class="alpha">Web-design</li>
+                            <li data-group="AWS" class="alpha">AWS</li>
                             <li></li>
                         </ul>
                         <ul id="animationList">
                             <!--ネット配信事業者様コンサルティング-->
-                            <li data-groups='["red", "blue"]'>
-                                <div class="card">
+                            <li data-groups='["Wordpress", "AWS"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-display fa-3x" style="color:red; padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">ネット配信事業者様<br>コンサルティング</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2016年11月<br>WordPress, AWS</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2016年2月<br>WordPress, AWS</div>
                                     </div>
                                 </div>
                             </li>
                             <!--観光産業ニュースサイト様AWSコンサルティング-->
-                            <li data-groups='["yellow"]'>
-                                <div class="card">
+                            <li data-groups='["Wordpress", "AWS"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-plane fa-3x" style="color: rgb(130, 64, 64); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">観光産業ニュースサイト様 AWSコンサルティング</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2015年7月<br>WordPress, AWS</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2015年7月<br>WordPress, AWS</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--サブスクリプション型音楽配信サービス構築-->
-                            <li data-groups='["blue"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-music fa-3x" style="color:black; padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">サブスクリプション型<br>音楽配信サービス構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2015年5月<br>Ruby on Rails, Nifty Cloud</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2015年5月<br>Ruby on Rails, Nifty Cloud</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--保険代理店向け管理画面構築-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-file-pen fa-3x" style="color:rgb(18, 184, 209); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">保険代理店向け<br>管理画面構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2015年3月<br>Ruby on Rails, 帳票</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2015年3月<br>Ruby on Rails, 帳票</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--クラウド型お礼状作成・送付サービス「shitata.me」構築-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails", "Logo-design"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center; padding-top: 20px;"><img src="./img/shitatame.jpeg" height="50px;" width="50px;"></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">クラウド型お礼状作成・<br>送付サービス構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2014年8月<br>Ruby on Rails, Web Fonts, logo</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2014年8月<br>Ruby on Rails, Web Fonts, logo</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--iOSアプリ向け動画編集API構築-->
-                            <li data-groups='["yellow"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-video fa-3x" style="color:rgb(26, 9, 127); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">iOSアプリ向け動画編集API構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2015年3月<br>Ruby on Rails, ffmpeg</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2014年4月<br>Ruby on Rails, ffmpeg</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--建設業種向け仕事マッチングサイト構築-->
-                            <li data-groups='["blue"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-triangle-exclamation fa-3x" style="color:rgb(45, 83, 138); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">建設業種向け仕事マッチングサイト構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2014年1月<br>Ruby on Rails</div>                                       
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2014年1月<br>Ruby on Rails</div>                                       
 
                                     </div>
                                 </div>
                             </li>
                             <!--太陽パネル設置シミュレータ構築-->
-                            <li data-groups='["red"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-regular fa-sun fa-3x" style="color:rgb(226, 177, 104); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">太陽光パネル設置シミュレータ構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2014年7月<br>Ruby on Rails, Google Maps API</div>                                       
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2014年7月<br>Ruby on Rails, Google Maps API</div>                                       
 
                                     </div>
                                 </div>
                             </li>
                             <!--「野菜美女」ロゴデザイン-->
-                            <li data-groups='["red"]'>
-                                <div class="card">
-                                    <div style="text-align: center; padding-top: 20px;"><img src="./img/yasai_bijyo_logo.png" height="50px;" width="80px;"></div>
+                            <li data-groups='["Logo-design"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center; padding-top: 20px;"><img src="./img/yasai_bijyo_logo.png" height="50px;" width="75px;"></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">「野菜美女」ロゴデザイン</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2013年9月<br>logo</div>  
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2013年9月<br>logo</div>  
 
                                     </div>
                                 </div>
                             </li>
                             <!--自然情報を提供するAPIの構築-->
-                            <li data-groups='["blue"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-gears fa-3x" style="color:rgb(147, 243, 254); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">自然情報を提供する<br>APIの構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2013年7~8月<br>Ruby on Rails, PostgreSQL</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2013年7~8月<br>Ruby on Rails, PostgreSQL</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--ホテル・旅館の求人情報サイト構築-->
-                            <li data-groups='["yellow"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-bed fa-3x" style="color:rgb(254, 145, 106); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">ホテル・旅館の<br>求人情報サイト構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2014年1月<br>Ruby on Rails</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2014年1月<br>Ruby on Rails</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--株式会社クライマーズ様 サイトリニューアル-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["Web-design"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center; padding-top: 20px;"><img src="./img/climbers_logo.png" height="50px;" width="50px;"></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">株式会社クライマーズ様<br>サイトリニューアル</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2013年12月<br>AngularJS, Web Design</div>  
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2013年12月<br>AngularJS, Web Design</div>  
 
                                 </div>
                             </li>
                             <!--株式会社クライマーズ様　ロゴデザイン-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["Logo-design"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-building fa-3x" style="color:rgb(255, 227, 88); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">株式会社クライマーズ様<br>ロゴデザイン</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2014年1月<br>logo</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2014年1月<br>logo</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--大手住宅メーカープロモーションサイト開発-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["PHP", "AWS"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-house-chimney fa-3x" style="color:rgb(164, 57, 57); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">大手住宅メーカー<br>プロモーションサイト開発</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年9月<br>PHP, Flickr API, AWS</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2012年9月<br>PHP, Flickr API, AWS</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--Ruby on Rails 技術調査及び開発サポート-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-magnifying-glass fa-3x" style="color:rgb(255, 98, 177); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">Ruby on Rails<br>技術調査及び開発サポート</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2013年5~7月<br>Ruby on Rails</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2013年5~7月<br>Ruby on Rails</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--訪問歯科医向け業務支援システム-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
+                            <li data-groups='["PHP", "Web-design"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
                                     <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">訪問歯科医向け業務支援システム</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--SaaSグループウェア開発-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-people-group fa-3x" style="color:rgb(99, 45, 107); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">SaaSグループウェア開発</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2011年3~6月<br>Ruby on Rails, CentOS</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--写真共有型SNSサイト構築-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                            <li data-groups='["PHP"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-camera fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">写真共有型SNSサイト構築</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2008年~<br>CakePHP, CentOS</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--いろは技研株式会社様 サイトリニューアル-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                            <li data-groups='["Wordpress"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-building fa-3x" style="color:rgb(244, 236, 115); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">いろは技研株式会社様　サイトリニューアル</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2012年4~6月<br>WordPress</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--サバイバルゲーマー向けSNS開発-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                            <li data-groups='["Ruby on Rails"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-flag fa-3x" style="color:rgb(23, 113, 21); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">サバイバルゲーマー向けSNS開発</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2008年<br>Ruby on Rails, MySQL</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--検定型CGMサイト開発-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                            <li data-groups='["PHP"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-check fa-3x" style="color:rgb(255, 0, 0); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">検定型CGMサイト開発</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2004年<br>PHP</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--家電組み込みソフトウェア検証用シミュレータ開発-->
                             <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-camera-retro fa-3x" style="color:rgb(73, 23, 69); padding-top: 20px;"></i></div>
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">家電組み込みソフトウェア<br>検証用シミュレータ開発</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2002年<br>VisualC++ 6.0</div>
 
                                     </div>
                                 </div>
                             </li>
                             <!--外食産業向けキャンペーンサイト構築-->
-                            <li data-groups='["green"]'>
-                                <div class="card">
-                                    <div style="text-align: center;"><i class="fa-solid fa-mobile-screen-button fa-3x" style="color:rgb(0, 0, 0); padding-top: 20px;"></i></div>
+                            <li data-groups='["PHP"]'>
+                                <div class="card" style="box-shadow: 0 0 5px rgb(82, 82, 82);">
+                                    <div style="text-align: center;"><i class="fa-solid fa-bullhorn fa-3x" style="color:rgb(255, 219, 118); padding-top: 20px;"></i></div>
                                     <div class="card-body">
-                                        <p class="card-title" style="color: black; text-align: center;">訪問歯科医向け業務支援システム</p>
-                                        <div class="p-3 mb-2 bg-light" style="color: gray;">2012年4~6月<br>CakePHP, SQLServer, Web Design</div>
+                                        <p class="card-title" style="color: black; text-align: center;">外食産業向け<br>キャンペーンサイト構築</p>
+                                        <div class="p-2 mb-2 bg-light" style="color: gray;">2007年<br>PHP</div>
 
                                     </div>
                                 </div>
@@ -437,40 +474,28 @@
                         </ul>
                     </div>
                 </div>
-                <div class="article">
+                <div class="article" id="otherprojects">
                     <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>他の活動</b></h2>
-                    <div class="card mb-3" style="max-width: 500px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="..." alt="...">
-                          </div>
-                          <div class="col-md-8">
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div class="card" style="width: 18rem; margin: 20px; box-shadow: 0 0 5px rgb(82, 82, 82);">
+                            <img src="./img/CDKTKT.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-text">Coderdojo喜多方</h5>
+                                <p class="card-text">福島県喜多方市で毎月第3土曜日に開催中の「無料プログラミング道場」です。<br>ワイワイ楽しくやりたいです。</p>
+                                <button type="button" class="btn btn-outline-secondary">→ 「Coderdojo喜多方」へ</button>
                             </div>
-                          </div>
                         </div>
-                        
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="..." alt="...">
-                          </div>
-                          <div class="col-md-8">
+                        <div class="card" style="width: 18rem; margin: 20px; box-shadow: 0 0 5px rgb(82, 82, 82);">
+                            <img src="./img/flyby.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-text">合同会社FLYBY</h5>
+                                <p class="card-text">空撮・ICT教育・DX支援の合同会社FLYBY（フライバイ）</p>
+                                <button type="button" class="btn btn-outline-secondary">→ 「合同会社FLYBY」へ</button>
                             </div>
-                          </div>
                         </div>
-                        
                     </div>
                 </div>
-                <div class="article" style="padding-right: 10px;">
+                <div class="article" style="padding-right: 10px;" id="contactus">
                     <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>お問い合わせ</b></h2>
                     <p class="honbun">
                         下記のフォームより必要情報を記入してください。<br>3営業日以内にご連絡いたします。
@@ -482,8 +507,7 @@
             <div class="side">
                 
 
-                <a class="twitter-timeline" data-height="3000" href="https://twitter.com/mrsy?ref_src=twsrc%5Etfw">Tweets by mrsy</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmrisin%2F&tabs=timeline&width=0&height=0&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <a class="twitter-timeline" data-height="4000" href="https://twitter.com/mrsy?ref_src=twsrc%5Etfw">Tweets by mrsy</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><!--data-height="3000"-->
             </div>
         </div>
 
@@ -495,6 +519,8 @@
                 <a href="https://risin.jp"><img src="./img/risin_footer_logo.png" class="d-block mx-auto" width="210" height="60" vspace="15"></a>
             </div>
         </footer>
+
+        <div class="pagetop">↑</div>
     </body>
 
 </html>
