@@ -29,19 +29,19 @@
                 $('#btn li').on('click', function() {
                     var $this = $(this),
                         $grid = $('#animationList');
-        
+
                     $('#btn .active').removeClass('active');
                     $this.addClass('active');
                     $grid.shuffle($this.data('group'));
                 });
-        
+
                 $('#animationList').shuffle({
                     group: 'all',
                     speed: 700,
                     easing: 'ease-in-out'
                 });
-            });
-            window.addEventListener("scroll", function () {
+                });
+                window.addEventListener("scroll", function () {
                 const elm = document.querySelector(".elm");
                 const scroll = window.pageYOffset;
                 if (scroll > 100) {
@@ -70,16 +70,14 @@
                         return false;
                     })
                 });
-        </script>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
-          ga('create', 'UA-44808916-1', 'n--log.net');
-          ga('send', 'pageview');
-        
+
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                
+                    ga('create', 'UA-44808916-1', 'n--log.net');
+                    ga('send', 'pageview');
         </script>
     </head>
     <body>
@@ -102,11 +100,19 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#home" style="padding-left:10px; padding-right:10px;">Home</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#introduce" style="padding-left:10px; padding-right:10px;">About Me</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#portfolio" style="padding-left:10px; padding-right:10px;">Portfolio</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#otherprojects" style="padding-left:10px; padding-right:10px;">Other Projects</a></font>
-                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#contactus" style="padding-left:10px; padding-right:10px;">Contact me</a></font>
+                        <font face="Montserrat">
+                            <a class="nav-link active" aria-current="page" href="#home" style="padding-left:10px; padding-right:10px;">Home</a>
+                        </font>
+                        <font face="Montserrat">
+                            <a class="nav-link active" aria-current="page" href="#introduce" style="padding-left:10px; padding-right:10px;">About Me</a></font>
+                        <font face="Montserrat"><a class="nav-link active" aria-current="page" href="#portfolio" style="padding-left:10px; padding-right:10px;">Portfolio</a>
+                        </font>
+                        <font face="Montserrat">
+                            <a class="nav-link active" aria-current="page" href="#otherprojects" style="padding-left:10px; padding-right:10px;">Other Projects</a>
+                        </font>
+                        <font face="Montserrat">
+                            <a class="nav-link active" aria-current="page" href="#contactme" style="padding-left:10px; padding-right:10px;">Contact me</a>
+                        </font>
                     </div>     
                 </div>                
             </div>
@@ -118,7 +124,7 @@
                     <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
                         <img src="./img/aboutme.jpg" alt="私の自己紹介" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                         <div class="card-body">
-                        <h5 class="card-title"><center>私の自己紹介</center></h5>
+                            <h5 class="card-title"><center>私の自己紹介</center></h5>
                         </div>
                     </div>
                 </a>
@@ -128,7 +134,7 @@
                     <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
                         <img src="./img/portfolio.jpg" alt="過去の実績" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                         <div class="card-body">
-                        <h5 class="card-title"><center>過去の実績</center></h5>
+                            <h5 class="card-title"><center>過去の実績</center></h5>
                         </div>
                     </div>
                 </a>
@@ -138,7 +144,7 @@
                     <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
                         <img src="./img/otherprojects.jpg" alt="他の活動" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                         <div class="card-body">
-                        <h5 class="card-title"><center>他の活動</center></h5>
+                            <h5 class="card-title"><center>他の活動</center></h5>
                         </div>
                     </div>
                 </a>
@@ -148,7 +154,7 @@
                     <div class="card" style="box-shadow: 0px 5px 5px rgb(129, 129, 129); margin-left:2%;  margin-right: 1%; border-radius: 20px; width: 21rem;">
                         <img src="./img/contactme.jpg" alt="お問い合わせはこちら" class="card-img-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                         <div class="card-body">
-                        <h5 class="card-title"><center>お問合せはこちら</center></h5>
+                            <h5 class="card-title"><center>お問合せはこちら</center></h5>
                         </div>
                     </div>
                 </a>    
@@ -467,6 +473,7 @@
                                     <div class="card-body">
                                         <p class="card-title" style="color: black; text-align: center;">外食産業向け<br>キャンペーンサイト構築</p>
                                         <div class="p-2 mb-2 bg-light" style="color: gray;">2007年<br>PHP</div>
+                                        <a href="https://flyby.jp" class="btn btn-outline-secondary" target="_blank">→ 「合同会社FLYBY」へ</a>
 
                                     </div>
                                 </div>
@@ -482,7 +489,7 @@
                             <div class="card-body">
                                 <h5 class="card-text">Coderdojo喜多方</h5>
                                 <p class="card-text">福島県喜多方市で毎月第3土曜日に開催中の「無料プログラミング道場」です。<br>ワイワイ楽しくやりたいです。</p>
-                                <button type="button" class="btn btn-outline-secondary">→ 「Coderdojo喜多方」へ</button>
+                                <a href="https://www.coderdojo-kitakata.com" class="btn btn-outline-secondary" target="_blank">→ 「Coderdojo喜多方」へ</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem; margin: 20px; box-shadow: 0 0 5px rgb(82, 82, 82);">
@@ -490,12 +497,12 @@
                             <div class="card-body">
                                 <h5 class="card-text">合同会社FLYBY</h5>
                                 <p class="card-text">空撮・ICT教育・DX支援の合同会社FLYBY（フライバイ）</p>
-                                <button type="button" class="btn btn-outline-secondary">→ 「合同会社FLYBY」へ</button>
+                                <a href="https://flyby.jp" class="btn btn-outline-secondary" target="_blank">→ 「合同会社FLYBY」へ</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="article" style="padding-right: 10px;" id="contactus">
+                <div class="article" style="padding-right: 10px;" id="contactme">
                     <h2 style="padding-left: 2px; padding-bottom: 2px;"><b>お問い合わせ</b></h2>
                     <p class="honbun">
                         下記のフォームより必要情報を記入してください。<br>3営業日以内にご連絡いたします。
